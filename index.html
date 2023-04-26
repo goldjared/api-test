@@ -11,15 +11,25 @@
 </head>
 <body>
   <img src="#">
+  <button>salamander</button>
   <script>
   const img = document.querySelector('img');
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=jOdYpoKKKafNqOpx5Ea97fQ6QfTmOHpG&s=salamander', {mode: 'cors'})
+  function genGif() {
+  fetch('https://api.giphy.com/v1/gifs/translate?api_key=jOdYpoKKKafNqOpx5Ea97fQ6QfTmOHpG&s=notch', {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
       img.src = response.data.images.original.url;
     });
+ 
+  }
+  genGif();
+
+  const btn = document.querySelector('button');
+  btn.addEventListener('click', () => {
+    genGif();
+  })
   </script>
 </body>
 </html>
