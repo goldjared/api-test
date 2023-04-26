@@ -14,8 +14,11 @@
   <button>salamander</button>
   <script>
   const img = document.querySelector('img');
-  function genGif() {
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=jOdYpoKKKafNqOpx5Ea97fQ6QfTmOHpG&s=notch', {mode: 'cors'})
+  function genGif(search) {
+    if(search === undefined) {
+      search = 'minecraft';
+    }
+  fetch(`https://api.giphy.com/v1/gifs/translate?api_key=jOdYpoKKKafNqOpx5Ea97fQ6QfTmOHpG&s=${search}`, {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
