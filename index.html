@@ -11,6 +11,9 @@
 </head>
 <body>
   <img src="#">
+  <label for="search">search:</label>
+  <input type="text" id="search">
+  <input type="submit" name="submit" id="submit">
   <button>salamander</button>
   <script>
   const img = document.querySelector('img');
@@ -33,6 +36,14 @@
   btn.addEventListener('click', () => {
     genGif();
   })
+
+  const search = document.getElementById('search');
+  const searchBtn = document.getElementById('submit');
+  searchBtn.addEventListener('click', () => {
+    genGif(`${search.value}`);
+  })
+
+
   </script>
 </body>
 </html>
