@@ -23,11 +23,16 @@
     }
   fetch(`https://api.giphy.com/v1/gifs/translate?api_key=jOdYpoKKKafNqOpx5Ea97fQ6QfTmOHpG&s=${search}`, {mode: 'cors'})
     .then(function(response) {
+      console.log(response)
       return response.json();
     })
     .then(function(response) {
       img.src = response.data.images.original.url;
+    })
+    .catch(function(error) {
+      console.log(error);
     });
+    
  
   }
   genGif();
